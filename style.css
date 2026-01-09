@@ -1,5 +1,5 @@
 /* =========================
-   CSS Variables (Theme)
+   Theme Variables
 ========================= */
 :root {
   --bg-color: #ffffff;
@@ -16,7 +16,7 @@
 }
 
 /* =========================
-   Global Reset
+   Reset
 ========================= */
 * {
   margin: 0;
@@ -24,31 +24,29 @@
   box-sizing: border-box;
 }
 
+/* =========================
+   Base
+========================= */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
   text-align: center;
+  line-height: 1.6;
 }
 
 /* =========================
-   Header & Navigation
+   Header
 ========================= */
-header {
-  position: relative;
-  padding: 5rem 1.5rem 1rem;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+.site-header {
+  padding: 2rem 1.5rem 1.5rem;
 }
 
 .language-nav {
-  position: absolute;
-  /* top: 1.5rem; */
-  right: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .language-nav a {
@@ -61,20 +59,15 @@ header h1 {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-weight: bold;
   font-size: 0.85rem;
-  transition: opacity 0.3s ease;
-}
-
-.language-nav a:hover {
-  opacity: 0.7;
+  font-weight: bold;
 }
 
 /* =========================
    Main Layout
 ========================= */
 main {
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
 }
@@ -83,20 +76,20 @@ main {
   width: 100%;
   max-width: 600px;
   border-radius: 12px;
-  margin: 1.5rem auto 2.5rem;
+  margin: 2rem auto;
   display: block;
 }
 
 /* =========================
-   Text Sections
+   Sections
 ========================= */
 section {
   margin-bottom: 3rem;
 }
 
 h2 {
-  font-size: 1.8rem;
   margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
 p {
@@ -105,16 +98,12 @@ p {
 }
 
 /* =========================
-   Recipe Steps
+   Recipe
 ========================= */
 .recipe-steps ol {
   list-style-position: inside;
   max-width: 600px;
-  margin: 1.5rem auto 0;
-}
-
-.recipe-steps li {
-  margin-bottom: 0.6rem;
+  margin: 1.5rem auto;
 }
 
 /* =========================
@@ -122,11 +111,11 @@ p {
 ========================= */
 .kimchi-varieties ul {
   list-style: none;
-  max-width: 800px;
-  margin: 2rem auto 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
 .kimchi-varieties li {
@@ -136,54 +125,33 @@ p {
 }
 
 .kimchi-varieties img {
-  width: 100%;
   max-width: 180px;
-  border-radius: 10px;
   margin-bottom: 1rem;
-}
-
-.kimchi-varieties h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  border-radius: 10px;
 }
 
 /* =========================
-   Inspiration Section
+   Inspiration
 ========================= */
-.inspiration-section ul {
-  list-style: none;
-  margin-top: 1.5rem;
-}
-
-.inspiration-section li {
-  margin-bottom: 1rem;
-}
-
 .inspiration-section a {
-  text-decoration: none;
-  color: var(--bg-color);
   background-color: var(--text-color);
-  padding: 0.6rem 1.2rem;
+  color: var(--bg-color);
+  padding: 0.6rem 1.4rem;
   border-radius: 30px;
-  font-size: 0.9rem;
-  transition: opacity 0.3s ease;
-}
-
-.inspiration-section a:hover {
-  opacity: 0.7;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* =========================
    Footer
 ========================= */
 footer {
-  padding: 2rem 1rem;
   border-top: 1px solid var(--border-color);
-  font-size: 0.9rem;
+  padding: 2rem 1rem;
 }
 
 /* =========================
-   Scroll To Top Button
+   Scroll To Top
 ========================= */
 .scroll-to-top {
   position: fixed;
@@ -198,51 +166,25 @@ footer {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: opacity 0.3s ease;
-}
-
-.scroll-to-top:hover {
-  opacity: 0.7;
 }
 
 /* =========================
-   Mobile
+   Mobile (NO OVERLAP)
 ========================= */
 @media (max-width: 600px) {
-  /* Reset header layout */
-  header {
-    position: static; /* removes positioning context */
-    padding: 1.5rem 1rem 1rem; /* remove huge top padding */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Reset nav completely */
   .language-nav {
-    position: static; /* no absolute positioning */
-    right: auto;
-    top: auto;
-    margin-bottom: 0.8rem;
-
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
 
-  /* Title always below nav */
-  header h1 {
-    font-size: 2rem;
-    margin: 0 0 1.2rem;
-    order: 2;
-  }
-
-  /* Smaller buttons */
   .language-nav a {
     width: 32px;
     height: 32px;
     font-size: 0.65rem;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 }
