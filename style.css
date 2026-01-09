@@ -47,7 +47,7 @@ header h1 {
 
 .language-nav {
   position: absolute;
-  top: 1.5rem;
+  /* top: 1.5rem; */
   right: 1.5rem;
 }
 
@@ -210,38 +210,36 @@ footer {
    Mobile
 ========================= */
 @media (max-width: 600px) {
-  /* 1. Remove positioning context completely */
+  /* Reset header layout */
   header {
-    position: static;
+    position: static; /* removes positioning context */
+    padding: 1.5rem 1rem 1rem; /* remove huge top padding */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 1rem 1rem;
   }
 
-  /* 2. Fully neutralize absolute nav */
+  /* Reset nav completely */
   .language-nav {
-    position: static !important;
-    top: auto;
+    position: static; /* no absolute positioning */
     right: auto;
+    top: auto;
+    margin-bottom: 0.8rem;
 
-    order: 1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 0.8rem;
   }
 
-  /* 3. Title is guaranteed below nav */
+  /* Title always below nav */
   header h1 {
-    order: 2;
     font-size: 2rem;
     margin: 0 0 1.2rem;
-    text-align: center;
+    order: 2;
   }
 
-  /* 4. Smaller buttons */
+  /* Smaller buttons */
   .language-nav a {
     width: 32px;
     height: 32px;
