@@ -39,28 +39,7 @@ body {
    Header
 ========================= */
 .site-header {
-  padding: 2rem 1.5rem 1.5rem;
-}
-
-.language-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-}
-
-.language-nav a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: bold;
+  padding: 2.5rem 1.5rem 2rem;
 }
 
 /* =========================
@@ -70,14 +49,6 @@ main {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
-}
-
-.main-section img {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  margin: 2rem auto;
-  display: block;
 }
 
 /* =========================
@@ -95,6 +66,17 @@ h2 {
 p {
   max-width: 700px;
   margin: 0.5rem auto;
+}
+
+/* =========================
+   Main Image
+========================= */
+.main-section img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  margin: 2rem auto;
+  display: block;
 }
 
 /* =========================
@@ -133,13 +115,48 @@ p {
 /* =========================
    Inspiration
 ========================= */
+.inspiration-section ul {
+  list-style: none; /* remove bullet points */
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.inspiration-section li {
+  margin-bottom: 1.5rem; /* bigger vertical gap between buttons */
+}
+
 .inspiration-section a {
   background-color: var(--text-color);
   color: var(--bg-color);
-  padding: 0.6rem 1.4rem;
+  padding: 0.8rem 1.8rem; /* slightly larger buttons */
   border-radius: 30px;
   text-decoration: none;
   display: inline-block;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   Language Nav (Bottom)
+========================= */
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 4rem;
+}
+
+.language-nav a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
 }
 
 /* =========================
@@ -169,15 +186,9 @@ footer {
 }
 
 /* =========================
-   Mobile (NO OVERLAP)
+   Mobile
 ========================= */
 @media (max-width: 600px) {
-  .language-nav {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
   .language-nav a {
     width: 32px;
     height: 32px;
