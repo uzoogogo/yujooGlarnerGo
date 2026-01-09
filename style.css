@@ -37,7 +37,7 @@ body {
 ========================= */
 header {
   position: relative;
-  padding: 2rem 1.5rem 1rem;
+  padding: 5rem 1.5rem 1rem;
 }
 
 header h1 {
@@ -49,8 +49,6 @@ header h1 {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  display: flex;
-  gap: 0.5rem;
 }
 
 .language-nav a {
@@ -76,7 +74,7 @@ header h1 {
    Main Layout
 ========================= */
 main {
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
 }
@@ -212,17 +210,41 @@ footer {
    Mobile
 ========================= */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
+  /* 1. Remove positioning context completely */
+  header {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem 1rem;
   }
 
+  /* 2. Fully neutralize absolute nav */
   .language-nav {
+    position: static !important;
+    top: auto;
+    right: auto;
+
+    order: 1;
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 100px;
-    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
   }
 
-  h2 {
-    font-size: 1.5rem;
+  /* 3. Title is guaranteed below nav */
+  header h1 {
+    order: 2;
+    font-size: 2rem;
+    margin: 0 0 1.2rem;
+    text-align: center;
+  }
+
+  /* 4. Smaller buttons */
+  .language-nav a {
+    width: 32px;
+    height: 32px;
+    font-size: 0.65rem;
   }
 }
