@@ -16,6 +16,24 @@
 }
 
 /* =========================
+   Button Hover Effects
+========================= */
+.language-nav a,
+.inspiration-section a,
+.scroll-to-top {
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.language-nav a:hover,
+.inspiration-section a:hover,
+.scroll-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* lighter effect */
+  transform: translateY(-3px); /* subtle lift */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
    Reset
 ========================= */
 * {
